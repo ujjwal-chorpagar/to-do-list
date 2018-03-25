@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To-do-list</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		#list{ visibility: hidden; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<center><h1>TO-DO List</h1></center>
+		<button class="btn btn-primary" id="mybtn">CREATE YOUR LIST</button><br />
+	<div id="list">
+		<div id="item_1">
+		<div class="input-group mb-3">
+	  		<div class="input-group-prepend">
+	    		<div class="input-group-text">
+	      			<input type="checkbox" aria-label="Checkbox for following text input">
+	    		</div>
+	  		</div>
+	  		<input type="text" class="form-control" id="input_field" autofocus>
+		</div>
+		</div>
+		<div id="item_2"></div>
+		<button class="btn btn-secondary" id="btn" onclick="addBtn();">ADD</button>
+	</div>
+</div>
+<script>
+	var x = document.getElementById("mybtn");
+	x.addEventListener("click", hide);
+	function hide(){
+		this.style.visibility="hidden";
+		document.getElementById("list").style.visibility="visible";
+	}
+	function addBtn(){
+		var y = document.getElementById("item_1"),
+            clone = y.cloneNode(true);
+		clone.id="item";
+		var main = document.getElementById("item_2")
+		main.appendChild(clone);
+        document.getElementById("input_field").value=" ";
+	}
+        
+</script>
+</body>
+</html>
